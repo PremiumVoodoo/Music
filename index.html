@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Premium Voodoo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    background: #5F6A30;
+    color: #FBFFB8;
+    font-family: 'Fraunces', serif;
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    padding: 60px 20px 20px;
+}
+
+.header h1 {
+    font-size: 82px;
+    letter-spacing: 8px;
+    font-weight: 300;
+
+    /* 🔥 gold gradient text */
+    background: linear-gradient(180deg, #FBFFB8 0%, #C8CA89 40%, #8A8F4A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* 🔥 subtle glow */
+    text-shadow: 0 10px 30px rgba(0,0,0,0.4);
+
+    margin-bottom: 10px;
+}
+
+/* PRODUCTS */
+.products {
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+    margin-top: 80px;
+}
+
+.product {
+    cursor: pointer;
+}
+
+.product img {
+    width: 380px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    transition: 0.3s;
+}
+
+.product:hover img {
+    transform: translateY(-10px) scale(1.05);
+}
+
+/* PRODUCT PAGE */
+#product-page {
+    display: none;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 🔥 FIXED SPACING */
+.product-container {
+    display: flex;
+    gap: 120px;
+    align-items: center;
+}
+
+/* IMAGE */
+.product-image img {
+    width: 440px;
+    border-radius: 18px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+}
+
+/* TEXT */
+.product-info {
+    max-width: 800px; /* 🔥 widened */
+}
+
+.product-info h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.price {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.product-info p {
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* BUTTON */
+.buy-btn {
+    background: #C8CA89;
+    color: #5F6A30;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.back {
+    display: block;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+/* 🔥 4-COLUMN GRID */
+#instrument-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+    width: 100%;
+}
+
+#instrument-grid div {
+    text-align: center;
+}
+
+#instrument-grid img {
+    width: 100%;
+    max-width: 160px;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* VIDEO */
+.video {
+    margin-top: 120px;
+    text-align: center;
+}
+
+iframe {
+    width: 720px;
+    height: 405px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    margin-top: 100px;
+    opacity: 0.6;
+}
+</style>
+</head>
+
+<body>
+
+<!-- MAIN PAGE -->
+<div id="main-page">
+
+    <div class="header">
+        <h1>PREMIUM VOODOO</h1>
+         <p class="subtitle">Soul Cushion Honey and Butter</p>
+    </div>
+
+    <div class="products">
+        <div class="product" onclick="openProduct('afro')">
+            <img src="afro-pack.png">
+        </div>
+        <div class="product" onclick="openProduct('unseen')">
+            <img src="unseen.png">
+        </div>
+        <div class="product" onclick="openProduct('instruments')">
+            <img src="instruments.png">
+        </div>
+    </div>
+
+    <div class="video">
+        <h2>Latest Releases</h2>
+        <iframe src="https://www.youtube.com/embed/lBQsOqGnS84"></iframe>
+    </div>
+
+    <footer>© Premium Voodoo</footer>
+
+</div>
+
+<!-- PRODUCT PAGE -->
+<div id="product-page">
+
+    <div class="product-container">
+
+        <div class="product-image">
+            <img id="product-img">
+        </div>
+
+        <div class="product-info">
+            <h1 id="product-title"></h1>
+            <div class="price" id="product-price"></div>
+            <p id="product-desc"></p>
+
+            <div id="instrument-grid"></div>
+
+            <button class="buy-btn">Buy Now</button>
+            <a onclick="goBack()" class="back">← Back</a>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+const products = {
+    afro: {
+        title: "Afro Fusion Groove Pack",
+        price: "Free",
+        desc: "Organic percussion, flutes and shamanic textures.",
+        img: "afro-pack.png"
+    },
+    unseen: {
+        title: "Unseen EP",
+        price: "€5",
+        desc: "Atmospheric cinematic journey.",
+        img: "unseen.png"
+    },
+    instruments: {
+        type: "collection",
+        title: "Instrument Collection",
+        items: [
+            { name: "Djembe", img: "instruments.png" },
+            { name: "Shaman Drum", img: "instruments.png" },
+            { name: "Flute", img: "instruments.png" },
+            { name: "Shakers", img: "instruments.png" },
+            { name: "Darbuka", img: "instruments.png" },
+            { name: "Rain", img: "instruments.png" },
+            { name: "Dream", img: "instruments.png" }
+        ]
+    }
+};
+
+function openProduct(key) {
+    const p = products[key];
+
+    const grid = document.getElementById("instrument-grid");
+    grid.innerHTML = "";
+
+    if (p.type === "collection") {
+        document.getElementById("product-title").innerText = p.title;
+        document.getElementById("product-price").innerText = "";
+        document.getElementById("product-desc").innerText = "";
+        document.getElementById("product-img").style.display = "none";
+
+        p.items.forEach(item => {
+            const div = document.createElement("div");
+            div.innerHTML = `
+                <img src="${item.img}">
+                <p>${item.name}</p>
+            `;
+            grid.appendChild(div);
+        });
+
+    } else {
+        document.getElementById("product-title").innerText = p.title;
+        document.getElementById("product-price").innerText = p.price;
+        document.getElementById("product-desc").innerText = p.desc;
+        document.getElementById("product-img").src = p.img;
+        document.getElementById("product-img").style.display = "block";
+    }
+
+    document.getElementById("main-page").style.display = "none";
+    document.getElementById("product-page").style.display = "flex";
+}
+
+function goBack() {
+    document.getElementById("product-page").style.display = "none";
+    document.getElementById("main-page").style.display = "block";
+}
+</script>
+
+</body>
+</html>
