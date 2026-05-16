@@ -16,7 +16,6 @@ body {
     font-family: 'Fraunces', serif;
 }
 
-/* HEADER */
 .header {
     padding: 30px;
 }
@@ -26,17 +25,13 @@ body {
     text-decoration: none;
 }
 
-/* LAYOUT (FIXED CENTERING) */
 .container {
     display: flex;
     gap: 60px;
     padding: 40px;
     align-items: center;
-    justify-content: center;   /* 🔥 centers horizontally */
-    min-height: 80vh;          /* 🔥 centers vertically */
 }
 
-/* MEDIA */
 .media {
     flex: 1;
     display: flex;
@@ -50,10 +45,8 @@ body {
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
-/* INFO */
 .info {
     flex: 1;
-    max-width: 420px;
 }
 
 .info h1 {
@@ -69,7 +62,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* BUTTON */
 button {
     background: #C8CA89;
     color: #5F6A30;
@@ -79,14 +71,18 @@ button {
     cursor: pointer;
 }
 
-/* MOBILE (NO STRETCHING) */
 @media (max-width: 768px) {
 
     .container {
         flex-direction: column;
         padding: 20px;
         gap: 20px;
-        min-height: auto;   /* 🔥 prevents stretch */
+    }
+
+    .info {
+        width: 100%;
+        max-width: 340px;
+        margin: 0 auto;
     }
 
     .info h1 {
