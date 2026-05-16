@@ -40,7 +40,7 @@ body {
     text-align: center;
 }
 
-/* ✅ IMAGE FIX (NO MORE SQUEEZE) */
+/* IMAGES */
 .product img {
     width: 380px;
     max-width: 100%;
@@ -51,18 +51,30 @@ body {
     transition: 0.3s;
 }
 
-.product:hover img {
+/* VIDEO (same style as images) */
+.product video {
+    width: 380px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+/* HOVER */
+.product:hover img,
+.product:hover video {
     transform: translateY(-10px) scale(1.05);
 }
 
-/* ✅ TEXT UNDER IMAGE */
+/* TEXT UNDER */
 .product-title {
     margin-top: 20px;
     font-size: 22px;
-    color: #FBFFB8; /* same as title */
+    color: #FBFFB8;
 }
 
-/* VIDEO */
+/* VIDEO SECTION */
 .video {
     margin-top: 120px;
     text-align: center;
@@ -82,7 +94,7 @@ footer {
     opacity: 0.6;
 }
 
-/* 📱 MOBILE */
+/* MOBILE */
 @media (max-width: 768px) {
 
     .header h1 {
@@ -96,7 +108,8 @@ footer {
         margin-top: 40px;
     }
 
-    .product img {
+    .product img,
+    .product video {
         width: 100%;
         max-width: 320px;
     }
@@ -115,7 +128,7 @@ footer {
         font-size: 12px;
     }
 
-    /* ✅ MOBILE ORDER */
+    /* MOBILE ORDER */
     .products a:nth-child(1) { order: 2; } /* Afro */
     .products a:nth-child(2) { order: 1; } /* Unseen */
     .products a:nth-child(3) { order: 3; } /* Instruments */
@@ -129,19 +142,24 @@ footer {
     <h1>PREMIUM VOODOO</h1>
 </div>
 
-<!-- DESKTOP: Afro | Unseen | Instruments -->
+<!-- DESKTOP ORDER: Afro | Unseen | Instruments -->
 <div class="products">
 
+    <!-- AFRO -->
     <a href="afro.html" class="product">
         <img src="afro-pack.png">
         <div class="product-title">Afro Fusion Pack</div>
     </a>
 
+    <!-- UNSEEN (VIDEO) -->
     <a href="unseen.html" class="product">
-        <img src="unseen.png">
+        <video autoplay loop muted playsinline>
+            <source src="unseen.mp4" type="video/mp4">
+        </video>
         <div class="product-title">Unseen EP</div>
     </a>
 
+    <!-- INSTRUMENTS -->
     <a href="instruments.html" class="product">
         <img src="instruments.png">
         <div class="product-title">Instruments</div>
