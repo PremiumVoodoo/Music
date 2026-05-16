@@ -14,7 +14,6 @@ body {
     background: #5F6A30;
     color: #FBFFB8;
     font-family: 'Fraunces', serif;
-    -webkit-font-smoothing: antialiased;
 }
 
 /* HEADER */
@@ -25,114 +24,61 @@ body {
 
 .header h1 {
     font-size: 64px;
-    letter-spacing: 4px;
 }
 
-/* TAGLINE */
 .tagline {
+    font-size: 16px;
     margin-top: 10px;
-    font-size: 18px;
-    letter-spacing: 2px;
-    opacity: 0.8;
 }
 
 /* PRODUCTS */
 .products {
     display: flex;
     justify-content: center;
-    gap: 90px;
+    gap: 80px;
     margin-top: 80px;
 }
 
 .product {
-    text-decoration: none;
     text-align: center;
+    text-decoration: none;
+    color: #FBFFB8;
 }
 
-/* MEDIA */
 .product img,
 .product video {
-    width: 380px;
+    width: 360px;
     max-width: 100%;
-    height: auto;
-    display: block;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.35);
-    transition: 0.3s;
 }
 
-/* HOVER */
-.product:hover img,
-.product:hover video {
-    transform: translateY(-10px) scale(1.05);
-}
-
-/* TITLE */
 .product-title {
-    margin-top: 20px;
-    font-size: 22px;
-}
-
-/* VIDEO SECTION */
-.video {
-    margin-top: 120px;
-    text-align: center;
-}
-
-iframe {
-    width: 720px;
-    height: 405px;
-    border-radius: 16px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-}
-
-footer {
-    text-align: center;
-    margin-top: 100px;
-    opacity: 0.6;
+    margin-top: 16px;
+    font-size: 20px;
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
-
-    .header h1 {
-        font-size: 34px;
-    }
-
-    .tagline {
-        font-size: 14px;
-    }
-
     .products {
         flex-direction: column;
         align-items: center;
-        gap: 50px;
-        margin-top: 40px;
+        gap: 40px;
         padding: 0 20px;
     }
 
-    .product {
-        width: 100%;
-        max-width: 340px;
+    .products a:nth-child(1) { order: 2; }
+    .products a:nth-child(2) { order: 1; }
+    .products a:nth-child(3) { order: 3; }
+
+    .header h1 {
+        font-size: 36px;
     }
 
     .product img,
     .product video {
         width: 100%;
-    }
-
-    .product-title {
-        font-size: 18px;
-    }
-
-    /* 🔥 MOBILE ORDER FIX */
-    .products a:nth-child(1) { order: 2; } /* Sample */
-    .products a:nth-child(2) { order: 1; } /* Unseen */
-    .products a:nth-child(3) { order: 3; } /* Instruments */
-
-    iframe {
-        width: 100%;
-        height: 200px;
+        max-width: 320px;
     }
 }
 </style>
@@ -142,39 +88,29 @@ footer {
 
 <div class="header">
     <h1>PREMIUM VOODOO</h1>
-    <p class="tagline">Sound of Soul — Honey & Butter</p>
+    <div class="tagline">Sound of Soul — Honey & Butter</div>
 </div>
 
 <div class="products">
 
-    <!-- SAMPLE -->
     <a href="sample-packs.html" class="product">
         <img src="sample-packs.png?v=2">
         <div class="product-title">Percussion Sample Pack</div>
     </a>
 
-    <!-- UNSEEN -->
     <a href="unseen.html" class="product">
         <video autoplay loop muted playsinline>
-            <source src="unseen.mp4" type="video/mp4">
+            <source src="unseen.mp4">
         </video>
         <div class="product-title">Unseen EP</div>
     </a>
 
-    <!-- INSTRUMENTS -->
     <a href="instruments.html" class="product">
         <img src="instruments.png">
         <div class="product-title">Instruments</div>
     </a>
 
 </div>
-
-<div class="video">
-    <h2>Latest Releases</h2>
-    <iframe src="https://www.youtube.com/embed/lBQsOqGnS84"></iframe>
-</div>
-
-<footer>© Premium Voodoo</footer>
 
 </body>
 </html>
