@@ -14,49 +14,30 @@ body {
     background: #5F6A30;
     color: #FBFFB8;
     font-family: 'Fraunces', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-/* CONTAINER */
 .container {
     display: flex;
-    gap: 100px;
+    gap: 80px;
     align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 40px;
+    padding: 20px;
 }
 
-/* 🔥 VIDEO FIX (NO STRETCHING EVER) */
-.media video {
-    width: 420px;
-    max-width: 100%;
-    height: auto; /* critical */
-    display: block;
-    border-radius: 20px;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+img {
+    width: 400px;
+    border-radius: 18px;
 }
 
-/* TEXT */
 .info {
-    max-width: 420px;
+    max-width: 400px;
 }
 
-.info h1 {
-    font-size: 42px;
-    margin-bottom: 20px;
-}
+h1 { font-size: 42px; }
 
-.price {
-    margin-bottom: 15px;
-    font-size: 18px;
-}
-
-.info p {
-    margin-bottom: 25px;
-    line-height: 1.6;
-}
-
-/* BUTTON */
 button {
     background: #C8CA89;
     color: #5F6A30;
@@ -66,30 +47,20 @@ button {
     cursor: pointer;
 }
 
-/* BACK */
 a {
     display: block;
     margin-top: 20px;
     color: #FBFFB8;
-    text-decoration: none;
 }
 
-/* 📱 MOBILE */
 @media (max-width: 768px) {
-
     .container {
         flex-direction: column;
         text-align: center;
-        gap: 40px;
     }
 
-    .media video {
-        width: 100%;
-        max-width: 320px;
-    }
-
-    .info h1 {
-        font-size: 28px;
+    img {
+        width: 90%;
     }
 }
 </style>
@@ -98,24 +69,16 @@ a {
 <body>
 
 <div class="container">
+    <img src="unseen.png">
 
-    <!-- VIDEO -->
-    <div class="media">
-        <video autoplay loop muted playsinline>
-            <source src="unseen.mp4" type="video/mp4">
-        </video>
-    </div>
-
-    <!-- TEXT -->
     <div class="info">
         <h1>Unseen EP</h1>
-        <div class="price">Rp 10</div>
+        <p>Rp 10</p>
         <p>Atmospheric cinematic journey.</p>
 
         <button>Buy Now</button>
         <a href="index.html">← Back</a>
     </div>
-
 </div>
 
 </body>
