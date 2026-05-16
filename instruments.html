@@ -25,11 +25,9 @@ body {
     text-decoration: none;
 }
 
-/* CENTERING FIX */
 .wrapper {
     display: flex;
     justify-content: center;
-    width: 100%;
 }
 
 .container {
@@ -41,7 +39,6 @@ body {
     width: 100%;
 }
 
-/* MEDIA */
 .media {
     flex: 1;
     display: flex;
@@ -55,18 +52,17 @@ body {
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
-/* INFO */
 .info {
     flex: 1;
 }
 
 .info h1 {
     font-size: 40px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .price {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .info p {
@@ -87,16 +83,26 @@ button {
     .container {
         flex-direction: column;
         padding: 20px;
-        gap: 20px;
+        gap: 24px;
     }
 
     .info {
         max-width: 340px;
         margin: 0 auto;
+        text-align: center;
     }
 
     .info h1 {
         font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .price {
+        margin-bottom: 10px;
+    }
+
+    .info p {
+        margin-bottom: 18px;
     }
 
     button {
