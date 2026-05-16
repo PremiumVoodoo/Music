@@ -21,19 +21,8 @@ body {
 }
 
 .header h1 {
-    font-size: 82px;
-    letter-spacing: 8px;
-    font-weight: 300;
-
-    /* 🔥 gold gradient text */
-    background: linear-gradient(180deg, #FBFFB8 0%, #C8CA89 40%, #8A8F4A 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    /* 🔥 subtle glow */
-    text-shadow: 0 10px 30px rgba(0,0,0,0.4);
-
-    margin-bottom: 10px;
+    font-size: 64px;
+    letter-spacing: 4px;
 }
 
 /* PRODUCTS */
@@ -49,7 +38,7 @@ body {
 }
 
 .product img {
-    width: 380px;
+    width: 380px; /* 🔥 bigger */
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.35);
     transition: 0.3s;
@@ -63,6 +52,7 @@ body {
 #product-page {
     display: none;
     height: 100vh;
+    display: none;
     justify-content: center;
     align-items: center;
 }
@@ -70,7 +60,7 @@ body {
 /* 🔥 FIXED SPACING */
 .product-container {
     display: flex;
-    gap: 120px;
+    gap: 120px; /* 🔥 space between image & text */
     align-items: center;
 }
 
@@ -83,7 +73,7 @@ body {
 
 /* TEXT */
 .product-info {
-    max-width: 800px; /* 🔥 widened */
+    max-width: 420px;
 }
 
 .product-info h1 {
@@ -117,27 +107,6 @@ body {
     cursor: pointer;
 }
 
-/* 🔥 4-COLUMN GRID */
-#instrument-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    margin-top: 30px;
-    width: 100%;
-}
-
-#instrument-grid div {
-    text-align: center;
-}
-
-#instrument-grid img {
-    width: 100%;
-    max-width: 160px;
-    border-radius: 12px;
-    display: block;
-    margin: 0 auto;
-}
-
 /* VIDEO */
 .video {
     margin-top: 120px;
@@ -167,7 +136,6 @@ footer {
 
     <div class="header">
         <h1>PREMIUM VOODOO</h1>
-         <p class="subtitle">Soul Cushion Honey and Butter</p>
     </div>
 
     <div class="products">
@@ -205,8 +173,6 @@ footer {
             <div class="price" id="product-price"></div>
             <p id="product-desc"></p>
 
-            <div id="instrument-grid"></div>
-
             <button class="buy-btn">Buy Now</button>
             <a onclick="goBack()" class="back">← Back</a>
         </div>
@@ -219,59 +185,31 @@ footer {
 const products = {
     afro: {
         title: "Afro Fusion Groove Pack",
-        price: "Free",
+        price: "Rp 12",
         desc: "Organic percussion, flutes and shamanic textures.",
         img: "afro-pack.png"
     },
     unseen: {
         title: "Unseen EP",
-        price: "€5",
+        price: "Rp 10",
         desc: "Atmospheric cinematic journey.",
         img: "unseen.png"
     },
     instruments: {
-        type: "collection",
-        title: "Instrument Collection",
-        items: [
-            { name: "Djembe", img: "instruments.png" },
-            { name: "Shaman Drum", img: "instruments.png" },
-            { name: "Flute", img: "instruments.png" },
-            { name: "Shakers", img: "instruments.png" },
-            { name: "Darbuka", img: "instruments.png" },
-            { name: "Rain", img: "instruments.png" },
-            { name: "Dream", img: "instruments.png" }
-        ]
+        title: "Musical Instruments",
+        price: "Rp 15",
+        desc: "Organic instrument collection.",
+        img: "instruments.png"
     }
 };
 
 function openProduct(key) {
     const p = products[key];
 
-    const grid = document.getElementById("instrument-grid");
-    grid.innerHTML = "";
-
-    if (p.type === "collection") {
-        document.getElementById("product-title").innerText = p.title;
-        document.getElementById("product-price").innerText = "";
-        document.getElementById("product-desc").innerText = "";
-        document.getElementById("product-img").style.display = "none";
-
-        p.items.forEach(item => {
-            const div = document.createElement("div");
-            div.innerHTML = `
-                <img src="${item.img}">
-                <p>${item.name}</p>
-            `;
-            grid.appendChild(div);
-        });
-
-    } else {
-        document.getElementById("product-title").innerText = p.title;
-        document.getElementById("product-price").innerText = p.price;
-        document.getElementById("product-desc").innerText = p.desc;
-        document.getElementById("product-img").src = p.img;
-        document.getElementById("product-img").style.display = "block";
-    }
+    document.getElementById("product-title").innerText = p.title;
+    document.getElementById("product-price").innerText = p.price;
+    document.getElementById("product-desc").innerText = p.desc;
+    document.getElementById("product-img").src = p.img;
 
     document.getElementById("main-page").style.display = "none";
     document.getElementById("product-page").style.display = "flex";
