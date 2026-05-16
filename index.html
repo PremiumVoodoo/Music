@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Premium Voodoo</title>
-    <p class="subtitle">Soul Sound Honey and Butter</p>
 
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300&display=swap" rel="stylesheet">
 
@@ -28,6 +27,14 @@ body {
     letter-spacing: 4px;
 }
 
+.subtitle {
+    margin-top: -8px;
+    font-size: 18px;
+    letter-spacing: 3px;
+    font-style: italic;
+    opacity: 0.75;
+}
+
 /* PRODUCTS */
 .products {
     display: flex;
@@ -41,8 +48,8 @@ body {
     text-align: center;
 }
 
-.product img,
-.product video {
+/* IMAGES */
+.product img {
     width: 380px;
     max-width: 100%;
     height: auto;
@@ -52,12 +59,23 @@ body {
     transition: 0.3s;
 }
 
+/* VIDEO (same style as images) */
+.product video {
+    width: 380px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+/* HOVER */
 .product:hover img,
 .product:hover video {
     transform: translateY(-10px) scale(1.05);
 }
 
-/* TEXT UNDER IMAGES */
+/* TEXT UNDER */
 .product-title {
     margin-top: 20px;
     font-size: 22px;
@@ -84,7 +102,7 @@ footer {
     opacity: 0.6;
 }
 
-/* 📱 MOBILE */
+/* MOBILE */
 @media (max-width: 768px) {
 
     .header h1 {
@@ -119,9 +137,9 @@ footer {
     }
 
     /* MOBILE ORDER */
-    .products a:nth-child(1) { order: 2; } /* Sample pack middle */
-    .products a:nth-child(2) { order: 1; } /* Unseen top */
-    .products a:nth-child(3) { order: 3; } /* Instruments bottom */
+    .products a:nth-child(1) { order: 2; } /* Afro */
+    .products a:nth-child(2) { order: 1; } /* Unseen */
+    .products a:nth-child(3) { order: 3; } /* Instruments */
 }
 </style>
 </head>
@@ -130,17 +148,19 @@ footer {
 
 <div class="header">
     <h1>PREMIUM VOODOO</h1>
+    <p class="subtitle">Soul Sound Honey and Butter</p>
 </div>
 
+<!-- DESKTOP ORDER: Afro | Unseen | Instruments -->
 <div class="products">
 
-    <!-- SAMPLE PACK (LEFT ON DESKTOP) -->
-    <a href="sample-packs.html" class="product">
-        <img src="sample-packs.png" alt="Sample Pack">
-        <div class="product-title">Percussion Sample Pack</div>
+    <!-- AFRO -->
+    <a href="afro.html" class="product">
+        <img src="afro-pack.png">
+        <div class="product-title">Afro Fusion Pack</div>
     </a>
 
-    <!-- UNSEEN (CENTER) -->
+    <!-- UNSEEN (VIDEO) -->
     <a href="unseen.html" class="product">
         <video autoplay loop muted playsinline>
             <source src="unseen.mp4" type="video/mp4">
@@ -148,9 +168,9 @@ footer {
         <div class="product-title">Unseen EP</div>
     </a>
 
-    <!-- INSTRUMENTS (RIGHT) -->
+    <!-- INSTRUMENTS -->
     <a href="instruments.html" class="product">
-        <img src="instruments.png" alt="Instruments">
+        <img src="instruments.png">
         <div class="product-title">Instruments</div>
     </a>
 
