@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Percussion Sample Pack</title>
+<title>Musical Instruments</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300&display=swap" rel="stylesheet">
 
@@ -14,45 +14,36 @@ body {
     background: #5F6A30;
     color: #FBFFB8;
     font-family: 'Fraunces', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
+/* LAYOUT */
 .container {
     display: flex;
-    gap: 100px;
+    gap: 80px;
     align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 40px;
+    padding: 20px;
 }
 
-/* IMAGE */
-.media img {
+/* 🔥 IMAGE FIX */
+img {
     width: 420px;
     max-width: 100%;
     height: auto;
     object-fit: contain;
-    display: block;
     border-radius: 20px;
     box-shadow: 0 25px 50px rgba(0,0,0,0.4);
 }
 
 .info {
-    max-width: 420px;
+    max-width: 400px;
 }
 
-.info h1 {
+h1 {
     font-size: 42px;
-    margin-bottom: 20px;
-}
-
-.price {
-    margin-bottom: 15px;
-    font-size: 18px;
-}
-
-.info p {
-    margin-bottom: 25px;
-    line-height: 1.6;
 }
 
 button {
@@ -68,25 +59,18 @@ a {
     display: block;
     margin-top: 20px;
     color: #FBFFB8;
-    text-decoration: none;
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
-
     .container {
         flex-direction: column;
         text-align: center;
-        gap: 40px;
     }
 
-    .media img {
+    img {
         width: 100%;
         max-width: 320px;
-    }
-
-    .info h1 {
-        font-size: 28px;
     }
 }
 </style>
@@ -95,20 +79,16 @@ a {
 <body>
 
 <div class="container">
-
-    <div class="media">
-        <img src="sample-packs.png" alt="Percussion Sample Pack">
-    </div>
+    <img src="instruments.png">
 
     <div class="info">
-        <h1>Percussion Sample Pack</h1>
-        <div class="price">Rp 12</div>
-        <p>Organic percussion, flutes and shamanic textures.</p>
+        <h1>Musical Instruments</h1>
+        <p>Rp 15</p>
+        <p>Organic instrument collection.</p>
 
         <button>Buy Now</button>
         <a href="index.html">← Back</a>
     </div>
-
 </div>
 
 </body>
