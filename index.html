@@ -66,7 +66,7 @@ footer {
     opacity: 0.6;
 }
 
-/* MOBILE */
+/* 📱 MOBILE */
 @media (max-width: 768px) {
 
     .header h1 {
@@ -99,10 +99,18 @@ footer {
         font-size: 12px;
     }
 
-    /* ORDER: Unseen → Afro → Instruments */
-    .products a:nth-child(1) { order: 1; }
-    .products a:nth-child(2) { order: 2; }
-    .products a:nth-child(3) { order: 3; }
+    /* ✅ MOBILE ORDER FIX */
+    .products a:nth-child(1) {
+        order: 2; /* Afro → middle */
+    }
+
+    .products a:nth-child(2) {
+        order: 1; /* Unseen → top */
+    }
+
+    .products a:nth-child(3) {
+        order: 3; /* Instruments → bottom */
+    }
 }
 </style>
 </head>
@@ -113,13 +121,14 @@ footer {
     <h1>PREMIUM VOODOO</h1>
 </div>
 
+<!-- ✅ DESKTOP ORDER (CORRECT) -->
 <div class="products">
-    <a href="unseen.html" class="product">
-        <img src="unseen.png">
-    </a>
-
     <a href="afro.html" class="product">
         <img src="afro-pack.png">
+    </a>
+
+    <a href="unseen.html" class="product">
+        <img src="unseen.png">
     </a>
 
     <a href="instruments.html" class="product">
