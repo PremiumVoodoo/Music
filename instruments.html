@@ -75,6 +75,9 @@ button {
     padding: 14px 28px;
     border: none;
     border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
 }
 
 /* MOBILE */
@@ -86,10 +89,17 @@ button {
         gap: 24px;
     }
 
+    .media img,
+    .media video {
+        max-width: 100%;
+    }
+
     .info {
+        width: 100%;
         max-width: 340px;
         margin: 0 auto;
         text-align: center;
+        box-sizing: border-box;
     }
 
     .info h1 {
@@ -107,6 +117,7 @@ button {
 
     button {
         width: 100%;
+        box-sizing: border-box;
     }
 }
 </style>
