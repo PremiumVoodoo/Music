@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Instruments</title>
+<title>Musical Instruments</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300&display=swap" rel="stylesheet">
 
@@ -25,13 +25,23 @@ body {
     text-decoration: none;
 }
 
+/* CENTERING FIX */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 .container {
     display: flex;
     gap: 60px;
     padding: 40px;
     align-items: center;
+    max-width: 1000px;
+    width: 100%;
 }
 
+/* MEDIA */
 .media {
     flex: 1;
     display: flex;
@@ -45,6 +55,7 @@ body {
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
+/* INFO */
 .info {
     flex: 1;
 }
@@ -68,9 +79,9 @@ button {
     padding: 14px 28px;
     border: none;
     border-radius: 8px;
-    cursor: pointer;
 }
 
+/* MOBILE */
 @media (max-width: 768px) {
 
     .container {
@@ -80,7 +91,6 @@ button {
     }
 
     .info {
-        width: 100%;
         max-width: 340px;
         margin: 0 auto;
     }
@@ -102,6 +112,7 @@ button {
     <a href="index.html">← Back</a>
 </div>
 
+<div class="wrapper">
 <div class="container">
 
     <div class="media">
@@ -112,10 +123,10 @@ button {
         <h1>Musical Instruments</h1>
         <div class="price">Rp 15</div>
         <p>Organic instrument collection.</p>
-
         <button>Buy Now</button>
     </div>
 
+</div>
 </div>
 
 </body>
