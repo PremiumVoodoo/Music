@@ -26,12 +26,14 @@ body {
     text-decoration: none;
 }
 
-/* LAYOUT */
+/* LAYOUT (FIXED CENTERING) */
 .container {
     display: flex;
     gap: 60px;
     padding: 40px;
     align-items: center;
+    justify-content: center;   /* 🔥 centers horizontally */
+    min-height: 80vh;          /* 🔥 centers vertically */
 }
 
 /* MEDIA */
@@ -51,6 +53,7 @@ body {
 /* INFO */
 .info {
     flex: 1;
+    max-width: 420px;
 }
 
 .info h1 {
@@ -76,13 +79,14 @@ button {
     cursor: pointer;
 }
 
-/* MOBILE */
+/* MOBILE (NO STRETCHING) */
 @media (max-width: 768px) {
 
     .container {
         flex-direction: column;
         padding: 20px;
         gap: 20px;
+        min-height: auto;   /* 🔥 prevents stretch */
     }
 
     .info h1 {
