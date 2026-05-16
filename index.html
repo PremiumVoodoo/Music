@@ -16,6 +16,7 @@ body {
     font-family: 'Fraunces', serif;
 }
 
+/* HEADER */
 .header {
     text-align: center;
     padding: 60px 20px 20px;
@@ -26,6 +27,7 @@ body {
     letter-spacing: 4px;
 }
 
+/* PRODUCTS */
 .products {
     display: flex;
     justify-content: center;
@@ -54,12 +56,14 @@ body {
     transform: translateY(-10px) scale(1.05);
 }
 
+/* TEXT UNDER IMAGES */
 .product-title {
     margin-top: 20px;
     font-size: 22px;
     color: #FBFFB8;
 }
 
+/* VIDEO SECTION */
 .video {
     margin-top: 120px;
     text-align: center;
@@ -72,13 +76,14 @@ iframe {
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
+/* FOOTER */
 footer {
     text-align: center;
     margin-top: 100px;
     opacity: 0.6;
 }
 
-/* MOBILE */
+/* 📱 MOBILE */
 @media (max-width: 768px) {
 
     .header h1 {
@@ -113,9 +118,9 @@ footer {
     }
 
     /* MOBILE ORDER */
-    .products a:nth-child(1) { order: 2; }
-    .products a:nth-child(2) { order: 1; }
-    .products a:nth-child(3) { order: 3; }
+    .products a:nth-child(1) { order: 2; } /* Sample pack middle */
+    .products a:nth-child(2) { order: 1; } /* Unseen top */
+    .products a:nth-child(3) { order: 3; } /* Instruments bottom */
 }
 </style>
 </head>
@@ -128,13 +133,13 @@ footer {
 
 <div class="products">
 
-    <!-- SAMPLE PACK -->
-    <a href="sample packs.html" class="product">
-        <img src="sample%20packs.png">
+    <!-- SAMPLE PACK (LEFT ON DESKTOP) -->
+    <a href="sample-packs.html" class="product">
+        <img src="sample-packs.png" alt="Sample Pack">
         <div class="product-title">Percussion Sample Pack</div>
     </a>
 
-    <!-- UNSEEN -->
+    <!-- UNSEEN (CENTER) -->
     <a href="unseen.html" class="product">
         <video autoplay loop muted playsinline>
             <source src="unseen.mp4" type="video/mp4">
@@ -142,9 +147,9 @@ footer {
         <div class="product-title">Unseen EP</div>
     </a>
 
-    <!-- INSTRUMENTS -->
+    <!-- INSTRUMENTS (RIGHT) -->
     <a href="instruments.html" class="product">
-        <img src="instruments.png">
+        <img src="instruments.png" alt="Instruments">
         <div class="product-title">Instruments</div>
     </a>
 
