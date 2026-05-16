@@ -53,7 +53,7 @@ body {
 /* PRODUCT PAGE */
 #product-page {
     display: none;
-    min-height: 100vh; /* ✅ FIXED */
+    min-height: 100vh;
     justify-content: center;
     align-items: center;
     padding: 20px;
@@ -156,7 +156,7 @@ footer {
     }
 
     #product-page {
-        align-items: flex-start; /* ✅ better mobile flow */
+        align-items: flex-start;
     }
 
     .product-image img {
@@ -184,6 +184,19 @@ footer {
     footer {
         margin-top: 60px;
         font-size: 12px;
+    }
+
+    /* ✅ MOBILE ORDER (FINAL POSITION) */
+    .products .product:nth-child(1) {
+        order: 2;
+    }
+
+    .products .product:nth-child(2) {
+        order: 1;
+    }
+
+    .products .product:nth-child(3) {
+        order: 3;
     }
 }
 </style>
