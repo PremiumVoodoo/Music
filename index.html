@@ -14,6 +14,7 @@ body {
     background: #5F6A30;
     color: #FBFFB8;
     font-family: 'Fraunces', serif;
+    -webkit-font-smoothing: antialiased;
 }
 
 /* HEADER */
@@ -27,6 +28,14 @@ body {
     letter-spacing: 4px;
 }
 
+/* TAGLINE */
+.tagline {
+    margin-top: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
 /* PRODUCTS */
 .products {
     display: flex;
@@ -35,7 +44,7 @@ body {
     margin-top: 80px;
 }
 
-/* PRODUCT CARD */
+/* PRODUCT */
 .product {
     text-decoration: none;
     text-align: center;
@@ -99,29 +108,47 @@ footer {
 @media (max-width: 768px) {
 
     .header h1 {
-        font-size: 36px;
+        font-size: 34px;
+        letter-spacing: 2px;
+    }
+
+    .tagline {
+        font-size: 14px;
+        letter-spacing: 1px;
     }
 
     .products {
         flex-direction: column;
         align-items: center;
-        gap: 40px;
+        gap: 50px;
         margin-top: 40px;
+        padding: 0 20px;
+    }
+
+    .product {
+        width: 100%;
+        max-width: 340px;
     }
 
     .product img,
     .product video {
         width: 100%;
-        max-width: 320px;
+        border-radius: 18px;
     }
 
-    iframe {
-        width: 90%;
-        height: 220px;
+    .product-title {
+        font-size: 18px;
+        margin-top: 12px;
     }
 
     .video {
-        margin-top: 60px;
+        margin-top: 80px;
+        padding: 0 20px;
+    }
+
+    iframe {
+        width: 100%;
+        height: 200px;
     }
 
     footer {
@@ -136,13 +163,14 @@ footer {
 
 <div class="header">
     <h1>PREMIUM VOODOO</h1>
+    <p class="tagline">Sound of Soul — Honey & Butter</p>
 </div>
 
 <div class="products">
 
     <!-- SAMPLE PACK -->
     <a href="sample-packs.html" class="product">
-        <img src="sample-packs.png">
+        <img src="sample-packs.png?v=2">
         <div class="product-title">Percussion Sample Pack</div>
     </a>
 
