@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Musical Instruments</title>
+<title>Premium Voodoo</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300&display=swap" rel="stylesheet">
 
@@ -16,104 +16,62 @@ body {
     font-family: 'Fraunces', serif;
 }
 
-/* LAYOUT */
-.container {
-    display: flex;
-    gap: 80px;
-    padding: 60px 40px;
+/* HEADER */
+.header {
+    text-align: center;
+    padding: 60px 20px 20px;
 }
 
-/* MEDIA */
-.media {
-    flex: 1;
+.header h1 {
+    font-size: 64px;
+}
+
+.tagline {
+    margin-top: 10px;
+}
+
+/* PRODUCTS */
+.products {
     display: flex;
     justify-content: center;
+    gap: 80px;
+    margin-top: 60px;
 }
 
-.media img {
-    width: 100%;
-    max-width: 420px;
-    height: auto;
-    object-fit: contain;
-    border-radius: 24px;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
-}
-
-/* INFO */
-.info {
-    flex: 1;
-}
-
-.info h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
-}
-
-.price {
-    margin-bottom: 15px;
-    font-size: 18px;
-}
-
-.info p {
-    margin-bottom: 25px;
-    line-height: 1.6;
-}
-
-/* BUTTON */
-button {
-    background: #C8CA89;
-    color: #5F6A30;
-    padding: 14px 28px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-/* BACK LINK */
-a {
-    display: block;
-    margin-top: 20px;
-    color: #FBFFB8;
+.product {
     text-decoration: none;
+    color: #FBFFB8;
+    text-align: center;
+}
+
+.product img,
+.product video {
+    width: 340px;
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+.product-title {
+    margin-top: 16px;
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
 
-    .container {
+    .products {
         flex-direction: column;
-        padding: 20px;
-        gap: 20px;
+        align-items: center;
+        gap: 40px;
     }
 
-    .media {
-        width: 100%;
-        justify-content: center;
-    }
+    /* ORDER FIX */
+    .products a:nth-child(1) { order: 2; }
+    .products a:nth-child(2) { order: 1; }
+    .products a:nth-child(3) { order: 3; }
 
-    .media img {
-        max-width: 340px;
-    }
-
-    .info {
-        width: 100%;
-    }
-
-    .info h1 {
-        font-size: 28px;
-    }
-
-    .price {
-        font-size: 16px;
-    }
-
-    .info p {
-        font-size: 14px;
-    }
-
-    button {
-        width: 100%;
-        margin-top: 10px;
+    .header h1 {
+        font-size: 36px;
     }
 }
 </style>
@@ -121,20 +79,29 @@ a {
 
 <body>
 
-<div class="container">
+<div class="header">
+    <h1>PREMIUM VOODOO</h1>
+    <div class="tagline">Sound of Soul — Honey & Butter</div>
+</div>
 
-    <div class="media">
+<div class="products">
+
+    <a href="sample-packs.html" class="product">
+        <img src="sample-packs.png?v=2">
+        <div class="product-title">Percussion Sample Pack</div>
+    </a>
+
+    <a href="unseen.html" class="product">
+        <video autoplay loop muted playsinline>
+            <source src="unseen.mp4">
+        </video>
+        <div class="product-title">Unseen EP</div>
+    </a>
+
+    <a href="instruments.html" class="product">
         <img src="instruments.png">
-    </div>
-
-    <div class="info">
-        <h1>Musical Instruments</h1>
-        <div class="price">Rp 15</div>
-        <p>Organic instrument collection.</p>
-
-        <button>Buy Now</button>
-        <a href="index.html">← Back</a>
-    </div>
+        <div class="product-title">Instruments</div>
+    </a>
 
 </div>
 
