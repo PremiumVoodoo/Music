@@ -40,8 +40,9 @@ body {
     text-align: center;
 }
 
-/* IMAGES */
-.product img {
+/* IMAGE */
+.product img,
+.product video {
     width: 380px;
     max-width: 100%;
     height: auto;
@@ -51,23 +52,12 @@ body {
     transition: 0.3s;
 }
 
-/* VIDEO (same style as images) */
-.product video {
-    width: 380px;
-    max-width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
-}
-
-/* HOVER */
 .product:hover img,
 .product:hover video {
     transform: translateY(-10px) scale(1.05);
 }
 
-/* TEXT UNDER */
+/* TEXT */
 .product-title {
     margin-top: 20px;
     font-size: 22px;
@@ -129,9 +119,9 @@ footer {
     }
 
     /* MOBILE ORDER */
-    .products a:nth-child(1) { order: 2; } /* Afro */
-    .products a:nth-child(2) { order: 1; } /* Unseen */
-    .products a:nth-child(3) { order: 3; } /* Instruments */
+    .products a:nth-child(1) { order: 2; }
+    .products a:nth-child(2) { order: 1; }
+    .products a:nth-child(3) { order: 3; }
 }
 </style>
 </head>
@@ -142,16 +132,15 @@ footer {
     <h1>PREMIUM VOODOO</h1>
 </div>
 
-<!-- DESKTOP ORDER: Afro | Unseen | Instruments -->
 <div class="products">
 
-    <!-- AFRO -->
-    <a href="afro.html" class="product">
+    <!-- SAMPLE PACK -->
+    <a href="sample%20packs.html" class="product">
         <img src="afro-pack.png">
-        <div class="product-title">Afro Fusion Pack</div>
+        <div class="product-title">Percussion Sample Pack</div>
     </a>
 
-    <!-- UNSEEN (VIDEO) -->
+    <!-- UNSEEN -->
     <a href="unseen.html" class="product">
         <video autoplay loop muted playsinline>
             <source src="unseen.mp4" type="video/mp4">
