@@ -35,10 +35,6 @@ body {
     margin-top: 80px;
 }
 
-.product {
-    cursor: pointer;
-}
-
 .product img {
     width: 380px;
     border-radius: 20px;
@@ -48,65 +44,6 @@ body {
 
 .product:hover img {
     transform: translateY(-10px) scale(1.05);
-}
-
-/* PRODUCT PAGE */
-#product-page {
-    display: none;
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-/* PRODUCT CONTAINER */
-.product-container {
-    display: flex;
-    gap: 120px;
-    align-items: center;
-}
-
-/* IMAGE */
-.product-image img {
-    width: 440px;
-    border-radius: 18px;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
-}
-
-/* TEXT */
-.product-info {
-    max-width: 420px;
-}
-
-.product-info h1 {
-    font-size: 42px;
-    margin-bottom: 20px;
-}
-
-.price {
-    margin-bottom: 15px;
-    font-size: 18px;
-}
-
-.product-info p {
-    margin-bottom: 25px;
-    line-height: 1.6;
-}
-
-/* BUTTON */
-.buy-btn {
-    background: #C8CA89;
-    color: #5F6A30;
-    padding: 12px 28px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.back {
-    display: block;
-    margin-top: 20px;
-    cursor: pointer;
 }
 
 /* VIDEO */
@@ -129,7 +66,7 @@ footer {
     opacity: 0.6;
 }
 
-/* 📱 MOBILE OPTIMIZATION */
+/* MOBILE */
 @media (max-width: 768px) {
 
     .header h1 {
@@ -148,30 +85,6 @@ footer {
         max-width: 320px;
     }
 
-    /* PRODUCT PAGE STACK */
-    .product-container {
-        flex-direction: column;
-        gap: 40px;
-        text-align: center;
-    }
-
-    #product-page {
-        align-items: flex-start;
-    }
-
-    .product-image img {
-        width: 100%;
-        max-width: 320px;
-    }
-
-    .product-info {
-        max-width: 100%;
-    }
-
-    .product-info h1 {
-        font-size: 28px;
-    }
-
     iframe {
         width: 90%;
         height: 220px;
@@ -186,113 +99,40 @@ footer {
         font-size: 12px;
     }
 
-    /* ✅ MOBILE ORDER (FINAL POSITION) */
-    .products .product:nth-child(1) {
-        order: 2;
-    }
-
-    .products .product:nth-child(2) {
-        order: 1;
-    }
-
-    .products .product:nth-child(3) {
-        order: 3;
-    }
+    /* ORDER: Unseen → Afro → Instruments */
+    .products a:nth-child(1) { order: 1; }
+    .products a:nth-child(2) { order: 2; }
+    .products a:nth-child(3) { order: 3; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- MAIN PAGE -->
-<div id="main-page">
-
-    <div class="header">
-        <h1>PREMIUM VOODOO</h1>
-    </div>
-
-    <div class="products">
-        <div class="product" onclick="openProduct('afro')">
-            <img src="afro-pack.png">
-        </div>
-        <div class="product" onclick="openProduct('unseen')">
-            <img src="unseen.png">
-        </div>
-        <div class="product" onclick="openProduct('instruments')">
-            <img src="instruments.png">
-        </div>
-    </div>
-
-    <div class="video">
-        <h2>Latest Releases</h2>
-        <iframe src="https://www.youtube.com/embed/lBQsOqGnS84"></iframe>
-    </div>
-
-    <footer>© Premium Voodoo</footer>
-
+<div class="header">
+    <h1>PREMIUM VOODOO</h1>
 </div>
 
-<!-- PRODUCT PAGE -->
-<div id="product-page">
+<div class="products">
+    <a href="unseen.html" class="product">
+        <img src="unseen.png">
+    </a>
 
-    <div class="product-container">
+    <a href="afro.html" class="product">
+        <img src="afro-pack.png">
+    </a>
 
-        <div class="product-image">
-            <img id="product-img">
-        </div>
-
-        <div class="product-info">
-            <h1 id="product-title"></h1>
-            <div class="price" id="product-price"></div>
-            <p id="product-desc"></p>
-
-            <button class="buy-btn">Buy Now</button>
-            <a onclick="goBack()" class="back">← Back</a>
-        </div>
-
-    </div>
-
+    <a href="instruments.html" class="product">
+        <img src="instruments.png">
+    </a>
 </div>
 
-<script>
-const products = {
-    afro: {
-        title: "Afro Fusion Groove Pack",
-        price: "Rp 12",
-        desc: "Organic percussion, flutes and shamanic textures.",
-        img: "afro-pack.png"
-    },
-    unseen: {
-        title: "Unseen EP",
-        price: "Rp 10",
-        desc: "Atmospheric cinematic journey.",
-        img: "unseen.png"
-    },
-    instruments: {
-        title: "Musical Instruments",
-        price: "Rp 15",
-        desc: "Organic instrument collection.",
-        img: "instruments.png"
-    }
-};
+<div class="video">
+    <h2>Latest Releases</h2>
+    <iframe src="https://www.youtube.com/embed/lBQsOqGnS84"></iframe>
+</div>
 
-function openProduct(key) {
-    const p = products[key];
-
-    document.getElementById("product-title").innerText = p.title;
-    document.getElementById("product-price").innerText = p.price;
-    document.getElementById("product-desc").innerText = p.desc;
-    document.getElementById("product-img").src = p.img;
-
-    document.getElementById("main-page").style.display = "none";
-    document.getElementById("product-page").style.display = "flex";
-}
-
-function goBack() {
-    document.getElementById("product-page").style.display = "none";
-    document.getElementById("main-page").style.display = "block";
-}
-</script>
+<footer>© Premium Voodoo</footer>
 
 </body>
 </html>
