@@ -25,11 +25,19 @@ body {
     text-decoration: none;
 }
 
+.wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 .container {
     display: flex;
     gap: 60px;
     padding: 40px;
     align-items: center;
+    max-width: 1000px;
+    width: 100%;
 }
 
 .media {
@@ -68,9 +76,9 @@ button {
     padding: 14px 28px;
     border: none;
     border-radius: 8px;
-    cursor: pointer;
 }
 
+/* MOBILE */
 @media (max-width: 768px) {
 
     .container {
@@ -80,7 +88,6 @@ button {
     }
 
     .info {
-        width: 100%;
         max-width: 340px;
         margin: 0 auto;
     }
@@ -102,6 +109,7 @@ button {
     <a href="index.html">← Back</a>
 </div>
 
+<div class="wrapper">
 <div class="container">
 
     <div class="media">
@@ -114,10 +122,10 @@ button {
         <h1>Unseen EP</h1>
         <div class="price">Rp 10</div>
         <p>Atmospheric cinematic journey.</p>
-
         <button>Buy Now</button>
     </div>
 
+</div>
 </div>
 
 </body>
