@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Premium Voodoo</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300&display=swap" rel="stylesheet">
@@ -38,7 +40,7 @@ body {
 }
 
 .product img {
-    width: 380px; /* 🔥 bigger */
+    width: 380px;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.35);
     transition: 0.3s;
@@ -51,16 +53,16 @@ body {
 /* PRODUCT PAGE */
 #product-page {
     display: none;
-    height: 100vh;
-    display: none;
+    min-height: 100vh; /* ✅ FIXED */
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
-/* 🔥 FIXED SPACING */
+/* PRODUCT CONTAINER */
 .product-container {
     display: flex;
-    gap: 120px; /* 🔥 space between image & text */
+    gap: 120px;
     align-items: center;
 }
 
@@ -125,6 +127,64 @@ footer {
     text-align: center;
     margin-top: 100px;
     opacity: 0.6;
+}
+
+/* 📱 MOBILE OPTIMIZATION */
+@media (max-width: 768px) {
+
+    .header h1 {
+        font-size: 36px;
+    }
+
+    .products {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        margin-top: 40px;
+    }
+
+    .product img {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    /* PRODUCT PAGE STACK */
+    .product-container {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    #product-page {
+        align-items: flex-start; /* ✅ better mobile flow */
+    }
+
+    .product-image img {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .product-info {
+        max-width: 100%;
+    }
+
+    .product-info h1 {
+        font-size: 28px;
+    }
+
+    iframe {
+        width: 90%;
+        height: 220px;
+    }
+
+    .video {
+        margin-top: 60px;
+    }
+
+    footer {
+        margin-top: 60px;
+        font-size: 12px;
+    }
 }
 </style>
 </head>
