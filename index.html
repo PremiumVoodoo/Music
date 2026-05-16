@@ -19,36 +19,56 @@ body {
 /* HEADER */
 .header {
     text-align: center;
-    padding: 60px 20px 20px;
+    padding: 60px 20px 10px;
 }
 
 .header h1 {
-    font-size: 64px;
+    font-size: 56px;
     letter-spacing: 4px;
 }
 
-/* PRODUCTS */
+/* PRODUCTS GRID */
 .products {
     display: flex;
     justify-content: center;
-    gap: 90px;
-    margin-top: 80px;
+    gap: 60px;
+    margin-top: 60px;
+    padding: 0 20px;
 }
 
-.product img {
-    width: 380px;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+/* CARD STYLE */
+.product {
+    text-decoration: none;
+    display: block;
+    border-radius: 24px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.05);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
     transition: 0.3s;
+    max-width: 360px;
 }
 
-.product:hover img {
-    transform: translateY(-10px) scale(1.05);
+.product:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+/* IMAGE FIX */
+.product img {
+    width: 100%;
+    height: auto; /* ✅ FIXED */
+    display: block;
+}
+
+/* OPTIONAL TITLE UNDER IMAGE */
+.product-title {
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
 }
 
 /* VIDEO */
 .video {
-    margin-top: 120px;
+    margin-top: 100px;
     text-align: center;
 }
 
@@ -76,13 +96,13 @@ footer {
     .products {
         flex-direction: column;
         align-items: center;
-        gap: 40px;
+        gap: 30px;
         margin-top: 40px;
     }
 
-    .product img {
-        width: 100%;
-        max-width: 320px;
+    .product {
+        width: 90%;
+        max-width: 340px;
     }
 
     iframe {
@@ -99,18 +119,10 @@ footer {
         font-size: 12px;
     }
 
-    /* ✅ MOBILE ORDER FIX */
-    .products a:nth-child(1) {
-        order: 2; /* Afro → middle */
-    }
-
-    .products a:nth-child(2) {
-        order: 1; /* Unseen → top */
-    }
-
-    .products a:nth-child(3) {
-        order: 3; /* Instruments → bottom */
-    }
+    /* 🔥 MOBILE ORDER (FEATURED FIRST) */
+    .products a:nth-child(1) { order: 2; } /* Afro */
+    .products a:nth-child(2) { order: 1; } /* Unseen */
+    .products a:nth-child(3) { order: 3; } /* Instruments */
 }
 </style>
 </head>
@@ -121,19 +133,24 @@ footer {
     <h1>PREMIUM VOODOO</h1>
 </div>
 
-<!-- ✅ DESKTOP ORDER (CORRECT) -->
+<!-- DESKTOP: Afro | Unseen | Instruments -->
 <div class="products">
+
     <a href="afro.html" class="product">
         <img src="afro-pack.png">
+        <div class="product-title">Afro Fusion Pack</div>
     </a>
 
     <a href="unseen.html" class="product">
         <img src="unseen.png">
+        <div class="product-title">Unseen EP</div>
     </a>
 
     <a href="instruments.html" class="product">
         <img src="instruments.png">
+        <div class="product-title">Instruments</div>
     </a>
+
 </div>
 
 <div class="video">
