@@ -9,6 +9,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300&display=swap" rel="stylesheet">
 
 <style>
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     background: #5F6A30;
@@ -24,10 +28,40 @@ body {
 
 .header h1 {
     font-size: 64px;
+    margin: 0;
 }
 
 .tagline {
     margin-top: 10px;
+    opacity: 0.8;
+}
+
+/* SECTION WRAPPERS */
+.section-products {
+    padding: 60px 20px 0;
+}
+
+.section-video {
+    background: #4a5425;
+    padding: 80px 20px;
+}
+
+.section-about {
+    background: #3d4620;
+    padding: 80px 20px;
+}
+
+/* WAVE */
+.wave {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.wave svg {
+    display: block;
+    width: 100%;
 }
 
 /* PRODUCTS */
@@ -35,7 +69,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 80px;
-    margin-top: 60px;
+    padding-bottom: 80px;
 }
 
 .product {
@@ -50,6 +84,12 @@ body {
     max-width: 100%;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    transition: transform 0.3s;
+}
+
+.product:hover img,
+.product:hover video {
+    transform: translateY(-6px);
 }
 
 .product-title {
@@ -57,23 +97,21 @@ body {
 }
 
 /* VIDEO */
-.video-section {
-    margin-top: 100px;
+.video-inner {
     display: flex;
     justify-content: center;
 }
 
-.video-section iframe {
+.video-inner iframe {
     width: 720px;
     height: 405px;
-    max-width: 90%;
+    max-width: 100%;
     border-radius: 16px;
     box-shadow: 0 15px 30px rgba(0,0,0,0.3);
 }
 
 /* ABOUT */
-.about-section {
-    margin-top: 120px;
+.about-inner {
     display: flex;
     justify-content: center;
 }
@@ -84,7 +122,6 @@ body {
     gap: 70px;
     max-width: 1000px;
     width: 100%;
-    padding: 0 40px;
 }
 
 .about-image {
@@ -113,21 +150,11 @@ body {
     max-width: 480px;
 }
 
-/* DIVIDER */
-.divider {
-    width: 60px;
-    height: 1px;
-    background: #FBFFB8;
-    opacity: 0.4;
-    margin: 0 auto;
-    margin-top: 120px;
-}
-
 /* FOOTER */
 footer {
+    background: #3d4620;
     text-align: center;
-    margin-top: 40px;
-    padding: 30px 20px;
+    padding: 40px 20px;
     font-size: 14px;
     opacity: 0.7;
 }
@@ -135,33 +162,37 @@ footer {
 /* MOBILE */
 @media (max-width: 768px) {
 
+    .header h1 {
+        font-size: 36px;
+    }
+
     .products {
         flex-direction: column;
         align-items: center;
         gap: 40px;
+        padding-bottom: 60px;
     }
 
     .products a:nth-child(1) { order: 2; }
     .products a:nth-child(2) { order: 1; }
     .products a:nth-child(3) { order: 3; }
 
-    .header h1 {
-        font-size: 36px;
+    .section-video {
+        padding: 60px 20px;
     }
 
-    .video-section iframe {
-        height: 200px;
+    .video-inner iframe {
+        height: 210px;
     }
 
-    .about-section {
-        margin-top: 80px;
+    .section-about {
+        padding: 60px 20px;
     }
 
     .about-container {
         flex-direction: column;
-        padding: 0 24px;
-        gap: 32px;
         text-align: center;
+        gap: 32px;
     }
 
     .about-image img {
@@ -176,78 +207,91 @@ footer {
     .about-text p {
         font-size: 15px;
     }
-
-    .divider {
-        margin-top: 80px;
-    }
-
-    footer {
-        margin-top: 30px;
-        font-size: 12px;
-    }
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <div class="header">
     <h1>PREMIUM VOODOO</h1>
     <div class="tagline">Sound of Soul — Honey & Butter</div>
 </div>
 
-<div class="products">
+<!-- PRODUCTS -->
+<div class="section-products">
+    <div class="products">
 
-    <a href="sample-packs.html" class="product">
-        <img src="sample-packs.png?v=2">
-        <div class="product-title">Percussion Sample Pack</div>
-    </a>
+        <a href="sample-packs.html" class="product">
+            <img src="sample-packs.png?v=2">
+            <div class="product-title">Percussion Sample Pack</div>
+        </a>
 
-    <a href="unseen.html" class="product">
-        <video autoplay loop muted playsinline>
-            <source src="unseen.mp4">
-        </video>
-        <div class="product-title">Unseen EP</div>
-    </a>
+        <a href="unseen.html" class="product">
+            <video autoplay loop muted playsinline>
+                <source src="unseen.mp4">
+            </video>
+            <div class="product-title">Unseen EP</div>
+        </a>
 
-    <a href="instruments.html" class="product">
-        <img src="instruments.png">
-        <div class="product-title">Instruments</div>
-    </a>
-
-</div>
-
-<div class="video-section">
-    <iframe src="https://www.youtube.com/embed/lBQsOqGnS84"
-            frameborder="0"
-            allowfullscreen>
-    </iframe>
-</div>
-
-<!-- ABOUT -->
-<div class="about-section">
-    <div class="about-container">
-
-        <div class="about-image">
-            <img src="MainPortretPicture.jpg" alt="Artist portrait">
-        </div>
-
-        <div class="about-text">
-            <h2>ABOUT</h2>
-            <p>
-                Premium Voodoo is a personal musical world rooted in the ancient and the electric.
-                Drawing from shamanic ceremony, the resonance of wood and voice, and the textures
-                of the natural world, this project weaves organic sound into the fabric of
-                electronic music — creating something that feels both deeply human and
-                otherworldly. A space where ritual meets rhythm, and tradition finds new life.
-            </p>
-        </div>
+        <a href="instruments.html" class="product">
+            <img src="instruments.png">
+            <div class="product-title">Instruments</div>
+        </a>
 
     </div>
 </div>
 
-<div class="divider"></div>
+<!-- WAVE: products → video -->
+<div class="wave">
+    <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,0 C240,80 480,0 720,40 C960,80 1200,10 1440,50 L1440,80 L0,80 Z" fill="#4a5425"/>
+    </svg>
+</div>
 
+<!-- VIDEO -->
+<div class="section-video">
+    <div class="video-inner">
+        <iframe src="https://www.youtube.com/embed/lBQsOqGnS84"
+                frameborder="0"
+                allowfullscreen>
+        </iframe>
+    </div>
+</div>
+
+<!-- WAVE: video → about -->
+<div class="wave" style="background:#4a5425;">
+    <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,50 C360,0 720,80 1080,30 C1260,10 1380,60 1440,40 L1440,80 L0,80 Z" fill="#3d4620"/>
+    </svg>
+</div>
+
+<!-- ABOUT -->
+<div class="section-about">
+    <div class="about-inner">
+        <div class="about-container">
+
+            <div class="about-image">
+                <img src="MainPortretPicture.jpg" alt="Artist portrait">
+            </div>
+
+            <div class="about-text">
+                <h2>ABOUT</h2>
+                <p>
+                    Premium Voodoo is a personal musical world rooted in the ancient and the electric.
+                    Drawing from shamanic ceremony, the resonance of wood and voice, and the textures
+                    of the natural world, this project weaves organic sound into the fabric of
+                    electronic music — creating something that feels both deeply human and
+                    otherworldly. A space where ritual meets rhythm, and tradition finds new life.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
 <footer>
     © Premium Voodoo — All rights reserved
 </footer>
