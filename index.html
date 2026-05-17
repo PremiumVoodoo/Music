@@ -114,15 +114,33 @@ body {
 /* VIDEO */
 .video-inner {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.video-label {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    opacity: 0.6;
+    letter-spacing: 5px;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.video-label-line {
+    width: 40px;
+    height: 1px;
+    background: #FBFFB8;
 }
 
 .video-inner iframe {
-    width: 720px;
-    height: 405px;
+    width: 960px;
+    height: 540px;
     max-width: 100%;
-    border-radius: 16px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    border-radius: 4px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
 }
 
 /* ABOUT */
@@ -147,7 +165,7 @@ body {
     width: 320px;
     height: 320px;
     object-fit: cover;
-    object-position: center bottom;
+    object-position: center top;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
@@ -199,7 +217,8 @@ footer {
     }
 
     .video-inner iframe {
-        height: 210px;
+        height: auto;
+        aspect-ratio: 16/9;
     }
 
     .section-about {
@@ -250,7 +269,7 @@ footer {
             <video autoplay loop muted playsinline>
                 <source src="unseen.mp4">
             </video>
-            <div class="product-title">Latest EP Release</div>
+            <div class="product-title">Unseen EP</div>
         </a>
 
         <a href="instruments.html" class="product">
@@ -270,8 +289,12 @@ footer {
 
 <!-- VIDEO -->
 <div class="section-video">
-    <div class="video-inner" style="flex-direction: column; align-items: center; gap: 32px;">
-        <h2 style="margin: 0; font-size: 36px; font-weight: 300; letter-spacing: 2px;">LIVE PERFORMANCE</h2>
+    <div class="video-inner">
+        <div class="video-label">
+            <div class="video-label-line"></div>
+            Live Performance
+            <div class="video-label-line"></div>
+        </div>
         <iframe src="https://www.youtube.com/embed/lBQsOqGnS84"
                 frameborder="0"
                 allowfullscreen>
