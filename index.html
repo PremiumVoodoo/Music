@@ -24,16 +24,31 @@ body {
 .header {
     text-align: center;
     padding: 60px 20px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-logo-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 220px;
+    opacity: 0.18;
+    pointer-events: none;
+    user-select: none;
 }
 
 .header h1 {
     font-size: 64px;
     margin: 0;
+    position: relative;
 }
 
 .tagline {
     margin-top: 10px;
     opacity: 0.8;
+    position: relative;
 }
 
 /* SECTION WRAPPERS */
@@ -132,7 +147,7 @@ body {
     width: 320px;
     height: 320px;
     object-fit: cover;
-    object-position: center bottom;
+    object-position: center top;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
@@ -216,6 +231,7 @@ footer {
 
 <!-- HEADER -->
 <div class="header">
+    <img src="logo_embossed_clean.png" class="header-logo-bg" alt="">
     <h1>PREMIUM VOODOO</h1>
     <div class="tagline">Sound of Soul — Honey & Butter</div>
 </div>
@@ -284,7 +300,7 @@ footer {
                     Premium Voodoo is a personal musical world rooted in the ancient and the electric.
                     Drawing from shamanic ceremony, the resonance of wood and voice, and the textures
                     of the natural world, this project weaves organic sound into the fabric of
-                    electronic music creating something that feels both deeply human and
+                    electronic music — creating something that feels both deeply human and
                     otherworldly. A space where ritual meets rhythm, and tradition finds new life.
                 </p>
             </div>
