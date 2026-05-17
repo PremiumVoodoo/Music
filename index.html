@@ -23,6 +23,47 @@ body {
 }
 
 /* ============================================================
+   NAVBAR — top navigation bar with logo and links
+   ============================================================ */
+
+.navbar {
+    display: flex; /* Lays logo and nav links in a horizontal row */
+    align-items: center; /* Vertically centers logo and links */
+    justify-content: space-between; /* Pushes logo to left, links to right */
+    padding: 20px 40px; /* Space inside the navbar */
+    position: sticky; /* Sticks to the top as you scroll */
+    top: 0; /* Sticks at the very top of the viewport */
+    background: #5F6A30; /* Same green as the page so it blends in */
+    z-index: 100; /* Sits above all other content when sticky */
+}
+
+.navbar-logo {
+    width: 48px; /* Size of the logo in the navbar */
+    opacity: 0.85; /* Slightly faded for elegance */
+}
+
+.navbar-links {
+    display: flex; /* Lays the nav links in a row */
+    gap: 40px; /* Space between each link */
+    list-style: none; /* Removes bullet points */
+    margin: 0; /* Removes default list margin */
+    padding: 0; /* Removes default list padding */
+}
+
+.navbar-links a {
+    color: #FBFFB8; /* Cream color to match the site */
+    text-decoration: none; /* Removes underline */
+    font-size: 14px; /* Slightly smaller than body text */
+    letter-spacing: 2px; /* Spaced out letters for a refined look */
+    opacity: 0.75; /* Slightly faded — secondary to the main content */
+    transition: opacity 0.2s; /* Smooth fade on hover */
+}
+
+.navbar-links a:hover {
+    opacity: 1; /* Full brightness on hover */
+}
+
+/* ============================================================
    HEADER — the top section with logo, title, and tagline
    ============================================================ */
 
@@ -32,16 +73,7 @@ body {
     position: relative; /* Allows child elements to be positioned absolutely inside it */
 }
 
-.header-logo-bg {
-    position: absolute; /* Takes the logo out of normal flow so it floats behind the text */
-    top: 50%; /* Positions it 50% from the top of the header */
-    left: 50%; /* Positions it 50% from the left of the header */
-    transform: translate(-50%, -42%); /* Shifts it back by half its own size to truly center it */
-    width: 200px; /* Controls how wide the embossed logo appears */
-    opacity: 0.18; /* Very faint — 18% visible, so it looks like an imprint */
-    pointer-events: none; /* Prevents the logo from blocking clicks on the title */
-    user-select: none; /* Prevents the logo from being accidentally selected as text */
-}
+
 
 .header h1 {
     font-size: clamp(32px, 6vw, 72px); /* Scales with screen width — min 32px, max 72px */
@@ -221,6 +253,24 @@ footer {
 
 @media (max-width: 768px) { /* Everything inside only applies on mobile screens */
 
+    .navbar {
+        padding: 16px 20px; /* Less padding on mobile */
+    }
+
+    .navbar-links {
+        gap: 20px; /* Tighter gap between links on mobile */
+    }
+
+    .navbar-links a {
+        font-size: 12px; /* Smaller link text on mobile */
+        letter-spacing: 1px;
+    }
+
+    .navbar-logo {
+        width: 36px; /* Smaller logo on mobile */
+    }
+
+
     .header h1 {
         font-size: 32px; /* Smaller fixed size on mobile instead of scaling with viewport */
         white-space: normal; /* Allows the title to wrap to two lines if needed */
@@ -276,10 +326,21 @@ footer {
 <body> <!-- Everything visible on the page goes here -->
 
 <!-- ============================================================
+     NAVBAR — sticky top bar with logo and page links
+     ============================================================ -->
+<nav class="navbar">
+    <img src="logo_final.png" class="navbar-logo" alt="Premium Voodoo"> <!-- Logo on the left -->
+    <ul class="navbar-links">
+        <li><a href="sample-packs.html">Sample Pack</a></li> <!-- Links to percussion sample pack page -->
+        <li><a href="unseen.html">Latest EP</a></li> <!-- Links to Unseen EP page -->
+        <li><a href="instruments.html">Instruments</a></li> <!-- Links to instruments page -->
+    </ul>
+</nav>
+
+<!-- ============================================================
      HEADER — logo background, site title, tagline
      ============================================================ -->
 <div class="header">
-    <img src="logo_embossed_clean.png" class="header-logo-bg" alt=""> <!-- Faint embossed logo behind the title -->
     <h1>PREMIUM VOODOO</h1> <!-- Main site title -->
     <div class="tagline">Sound of Soul — Honey & Butter</div> <!-- Subtitle / slogan -->
 </div>
