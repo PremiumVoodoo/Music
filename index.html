@@ -66,6 +66,28 @@ body {
     padding: 80px 20px;
 }
 
+/* LOGO DIVIDER */
+.logo-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding: 10px 40px;
+}
+
+.logo-divider-line {
+    flex: 1;
+    height: 1px;
+    opacity: 0.25;
+    background: #FBFFB8;
+}
+
+.logo-divider img {
+    width: 60px;
+    opacity: 0.5;
+    flex-shrink: 0;
+}
+
 /* WAVE */
 .wave {
     display: block;
@@ -232,7 +254,6 @@ footer {
 
 <!-- HEADER -->
 <div class="header">
-    <img src="logo_embossed_clean.png" class="header-logo-bg" alt="">
     <h1>PREMIUM VOODOO</h1>
     <div class="tagline">Sound of Soul — Honey & Butter</div>
 </div>
@@ -261,11 +282,11 @@ footer {
     </div>
 </div>
 
-<!-- WAVE: products → video -->
-<div class="wave">
-    <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <path d="M0,0 C240,80 480,0 720,40 C960,80 1200,10 1440,50 L1440,80 L0,80 Z" fill="#4a5425"/>
-    </svg>
+<!-- LOGO DIVIDER: products → video -->
+<div class="logo-divider">
+    <div class="logo-divider-line"></div>
+    <img src="logo_final.png" alt="">
+    <div class="logo-divider-line"></div>
 </div>
 
 <!-- VIDEO -->
@@ -279,11 +300,11 @@ footer {
     </div>
 </div>
 
-<!-- WAVE: video → about -->
-<div class="wave" style="background:#4a5425;">
-    <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <path d="M0,50 C360,0 720,80 1080,30 C1260,10 1380,60 1440,40 L1440,80 L0,80 Z" fill="#3d4620"/>
-    </svg>
+<!-- LOGO DIVIDER: video → about -->
+<div class="logo-divider">
+    <div class="logo-divider-line"></div>
+    <img src="logo_final.png" alt="">
+    <div class="logo-divider-line"></div>
 </div>
 
 <!-- ABOUT -->
