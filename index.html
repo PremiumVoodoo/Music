@@ -1,325 +1,361 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html> <!-- Tells the browser this is an HTML5 document -->
+<html lang="en"> <!-- Root element of the page, language set to English -->
+<head> <!-- Contains invisible setup info: title, fonts, styles -->
+<meta charset="UTF-8"> <!-- Allows special characters like — and © to display correctly -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes the page scale correctly on mobile phones -->
 
-<title>Premium Voodoo</title>
+<title>Premium Voodoo</title> <!-- Text shown in the browser tab -->
 
+<!-- Loads the Fraunces font from Google Fonts — weight 300 is the thin elegant style -->
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300&display=swap" rel="stylesheet">
 
-<style>
+<style> <!-- Everything between these tags is CSS — controls how things look -->
+
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /* Makes padding and borders included in element width — prevents layout bugs */
 }
 
 body {
-    margin: 0;
-    background: #5F6A30;
-    color: #FBFFB8;
-    font-family: 'Fraunces', serif;
+    margin: 0; /* Removes default white space around the page edges */
+    background: #5F6A30; /* Olive green background color for the whole page */
+    color: #FBFFB8; /* Pale yellow-cream text color used everywhere by default */
+    font-family: 'Fraunces', serif; /* Sets the loaded Google font as the default font */
 }
 
-/* HEADER */
+/* ============================================================
+   HEADER — the top section with logo, title, and tagline
+   ============================================================ */
+
 .header {
-    text-align: center;
-    padding: 80px 40px 80px;
-    position: relative;
+    text-align: center; /* Centers everything inside horizontally */
+    padding: 80px 40px 80px; /* Space inside: 80px top, 40px left/right, 80px bottom */
+    position: relative; /* Allows child elements to be positioned absolutely inside it */
 }
 
 .header-logo-bg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -42%);
-    width: 200px;
-    opacity: 0.18;
-    pointer-events: none;
-    user-select: none;
+    position: absolute; /* Takes the logo out of normal flow so it floats behind the text */
+    top: 50%; /* Positions it 50% from the top of the header */
+    left: 50%; /* Positions it 50% from the left of the header */
+    transform: translate(-50%, -42%); /* Shifts it back by half its own size to truly center it */
+    width: 200px; /* Controls how wide the embossed logo appears */
+    opacity: 0.18; /* Very faint — 18% visible, so it looks like an imprint */
+    pointer-events: none; /* Prevents the logo from blocking clicks on the title */
+    user-select: none; /* Prevents the logo from being accidentally selected as text */
 }
 
 .header h1 {
-    font-size: clamp(32px, 6vw, 72px);
-    margin: 0;
-    position: relative;
-    white-space: nowrap;
+    font-size: clamp(32px, 6vw, 72px); /* Scales with screen width — min 32px, max 72px */
+    margin: 0; /* Removes default top/bottom space around the h1 */
+    position: relative; /* Puts the title above the absolutely-positioned logo background */
+    white-space: nowrap; /* Prevents the title from breaking onto two lines on desktop */
 }
 
 .tagline {
-    margin-top: 10px;
-    opacity: 0.8;
-    position: relative;
+    margin-top: 10px; /* Small gap between the title and the tagline */
+    opacity: 0.8; /* Slightly faded so it feels secondary to the title */
+    position: relative; /* Keeps it above the logo background layer */
 }
 
-/* SECTION WRAPPERS */
+/* ============================================================
+   SECTION WRAPPERS — background colors for each content block
+   ============================================================ */
+
 .section-products {
-    padding: 60px 20px 0;
+    padding: 60px 20px 0; /* Space above and on the sides of the products grid */
 }
 
 .section-video {
-    background: #4a5425;
-    padding: 80px 20px;
+    background: #4a5425; /* Slightly lighter green — visually separates this section */
+    padding: 80px 20px; /* Space above and below the video */
 }
 
 .section-about {
-    background: #3d4620;
-    padding: 80px 20px;
+    background: #3d4620; /* Darker green — the deepest tone, anchors the bottom of the page */
+    padding: 80px 20px; /* Space above and below the about content */
 }
 
-/* WAVE */
+/* ============================================================
+   WAVE DIVIDERS — the organic curved shapes between sections
+   ============================================================ */
+
 .wave {
-    display: block;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
+    display: block; /* Makes the container behave as a block element */
+    width: 100%; /* Stretches the full width of the page */
+    overflow: hidden; /* Hides any SVG edges that might overflow */
+    line-height: 0; /* Removes any invisible gap below the SVG */
 }
 
 .wave svg {
-    display: block;
-    width: 100%;
+    display: block; /* Removes the small gap that appears under inline SVGs */
+    width: 100%; /* SVG stretches to fill the container */
 }
 
-/* PRODUCTS */
+/* ============================================================
+   PRODUCTS — the three product cards in a row
+   ============================================================ */
+
 .products {
-    display: flex;
-    justify-content: center;
-    gap: 80px;
-    padding-bottom: 80px;
+    display: flex; /* Lays the product cards out in a horizontal row */
+    justify-content: center; /* Centers the row horizontally on the page */
+    gap: 80px; /* Space between each product card */
+    padding-bottom: 80px; /* Space below the products before the wave */
 }
 
 .product {
-    text-decoration: none;
-    color: #FBFFB8;
-    text-align: center;
+    text-decoration: none; /* Removes the underline from the clickable link */
+    color: #FBFFB8; /* Makes the product title text cream colored instead of default blue */
+    text-align: center; /* Centers the image and title within each card */
 }
 
 .product img,
 .product video {
-    width: 340px;
-    max-width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
-    transition: transform 0.3s;
+    width: 340px; /* Fixed width for each product image or video */
+    max-width: 100%; /* Prevents overflow on smaller screens */
+    border-radius: 20px; /* Rounds the corners of the image/video */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35); /* Drop shadow: 0 horizontal, 20px down, 40px blur, 35% black */
+    transition: transform 0.3s; /* Animates the hover lift effect over 0.3 seconds */
 }
 
 .product:hover img,
 .product:hover video {
-    transform: translateY(-6px);
+    transform: translateY(-6px); /* Moves the image 6px upward when hovered — subtle lift */
 }
 
 .product-title {
-    margin-top: 16px;
+    margin-top: 16px; /* Space between the image and the title text below it */
 }
 
-/* VIDEO */
+/* ============================================================
+   VIDEO SECTION — the Live Performance label and YouTube embed
+   ============================================================ */
+
 .video-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    display: flex; /* Enables flexbox layout */
+    flex-direction: column; /* Stacks label and video vertically */
+    align-items: center; /* Centers both the label and video horizontally */
+    gap: 20px; /* Space between the label and the video */
 }
 
 .video-label {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    opacity: 0.6;
-    letter-spacing: 5px;
-    font-size: 11px;
-    text-transform: uppercase;
+    display: flex; /* Lays the lines and text in a horizontal row */
+    align-items: center; /* Vertically centers the lines with the text */
+    gap: 16px; /* Space between each line and the text */
+    opacity: 0.6; /* Fades the label so it's elegant and not too loud */
+    letter-spacing: 2px; /* Adds space between letters for a refined look */
+    font-size: 16px; /* Same size as the tagline — consistent */
 }
 
 .video-label-line {
-    width: 40px;
-    height: 1px;
-    background: #FBFFB8;
+    width: 40px; /* Length of the decorative lines flanking the label text */
+    height: 1px; /* Thin single-pixel line */
+    background: #FBFFB8; /* Cream color to match the text */
 }
 
 .video-inner iframe {
-    width: 960px;
-    height: 540px;
-    max-width: 100%;
-    border-radius: 4px;
-    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+    width: 960px; /* Wide cinematic size for the video */
+    height: 540px; /* 16:9 ratio height for 960px width */
+    max-width: 100%; /* Shrinks on smaller screens so it doesn't overflow */
+    border-radius: 4px; /* Very slight rounding — almost sharp, cinematic feel */
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5); /* Deep dramatic shadow under the video */
 }
 
-/* ABOUT */
+/* ============================================================
+   ABOUT SECTION — portrait photo + text side by side
+   ============================================================ */
+
 .about-inner {
-    display: flex;
-    justify-content: center;
+    display: flex; /* Enables flexbox */
+    justify-content: center; /* Centers the about container on the page */
 }
 
 .about-container {
-    display: flex;
-    align-items: center;
-    gap: 70px;
-    max-width: 1000px;
-    width: 100%;
+    display: flex; /* Lays photo and text side by side */
+    align-items: center; /* Vertically centers the photo with the text block */
+    gap: 70px; /* Space between the photo and the text */
+    max-width: 1000px; /* Limits the width so it doesn't stretch too wide */
+    width: 100%; /* Takes full available width up to the max */
 }
 
 .about-image {
-    flex-shrink: 0;
+    flex-shrink: 0; /* Prevents the image container from shrinking when space is tight */
 }
 
 .about-image img {
-    width: 320px;
-    height: 320px;
-    object-fit: cover;
-    object-position: center top;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    width: 320px; /* Width of the portrait photo frame */
+    height: 320px; /* Height of the portrait photo frame — square crop */
+    object-fit: cover; /* Fills the square frame by cropping the photo, no stretching */
+    object-position: center top; /* Crops from the top — keeps the face visible */
+    border-radius: 20px; /* Rounds the corners of the photo */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4); /* Shadow under the photo */
 }
 
 .about-text h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    font-weight: 300;
-    letter-spacing: 2px;
+    font-size: 36px; /* Size of the ABOUT heading */
+    margin-bottom: 20px; /* Space between the heading and the paragraph */
+    font-weight: 300; /* Light weight — matches the overall thin elegant style */
+    letter-spacing: 2px; /* Spaced out letters for the heading */
 }
 
 .about-text p {
-    font-size: 17px;
-    line-height: 1.8;
-    opacity: 0.9;
-    max-width: 480px;
+    font-size: 17px; /* Body text size for the about paragraph */
+    line-height: 1.8; /* Generous spacing between lines for readability */
+    opacity: 0.9; /* Slightly faded so it feels soft, not harsh */
+    max-width: 480px; /* Limits line length so text doesn't stretch too wide */
 }
 
-/* FOOTER */
+/* ============================================================
+   FOOTER — the bottom copyright bar
+   ============================================================ */
+
 footer {
-    background: #3d4620;
-    text-align: center;
-    padding: 40px 20px;
-    font-size: 14px;
-    opacity: 0.7;
+    background: #3d4620; /* Same dark green as the about section — seamless bottom */
+    text-align: center; /* Centers the copyright text */
+    padding: 40px 20px; /* Space inside the footer */
+    font-size: 14px; /* Smaller text — secondary information */
+    opacity: 0.7; /* Faded — unobtrusive */
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
+/* ============================================================
+   MOBILE STYLES — overrides for screens narrower than 768px
+   ============================================================ */
+
+@media (max-width: 768px) { /* Everything inside only applies on mobile screens */
 
     .header h1 {
-        font-size: 32px;
-        white-space: normal;
+        font-size: 32px; /* Smaller fixed size on mobile instead of scaling with viewport */
+        white-space: normal; /* Allows the title to wrap to two lines if needed */
     }
 
     .products {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-        padding-bottom: 60px;
+        flex-direction: column; /* Stacks products vertically instead of side by side */
+        align-items: center; /* Centers each product card */
+        gap: 40px; /* Smaller gap between stacked cards */
+        padding-bottom: 60px; /* Less bottom padding on mobile */
     }
 
-    .products a:nth-child(1) { order: 2; }
-    .products a:nth-child(2) { order: 1; }
-    .products a:nth-child(3) { order: 3; }
+    /* Reorders products on mobile: Unseen EP first, then Percussion, then Instruments */
+    .products a:nth-child(1) { order: 2; } /* Percussion → middle */
+    .products a:nth-child(2) { order: 1; } /* Unseen EP → top */
+    .products a:nth-child(3) { order: 3; } /* Instruments → bottom */
 
     .section-video {
-        padding: 60px 20px;
+        padding: 60px 20px; /* Less padding on mobile */
     }
 
     .video-inner iframe {
-        height: auto;
-        aspect-ratio: 16/9;
+        height: auto; /* Lets the height calculate automatically */
+        aspect-ratio: 16/9; /* Maintains widescreen ratio as width shrinks */
     }
 
     .section-about {
-        padding: 60px 20px;
+        padding: 60px 20px; /* Less padding on mobile */
     }
 
     .about-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 32px;
+        flex-direction: column; /* Stacks photo above text on mobile */
+        text-align: center; /* Centers text under the photo */
+        gap: 32px; /* Smaller gap between photo and text */
     }
 
     .about-image img {
-        width: 240px;
-        height: 240px;
+        width: 240px; /* Smaller photo on mobile */
+        height: 240px; /* Keeps the square crop on mobile */
     }
 
     .about-text h2 {
-        font-size: 28px;
+        font-size: 28px; /* Smaller heading on mobile */
     }
 
     .about-text p {
-        font-size: 15px;
+        font-size: 15px; /* Slightly smaller paragraph text on mobile */
     }
 }
 </style>
 </head>
 
-<body>
+<body> <!-- Everything visible on the page goes here -->
 
-<!-- HEADER -->
+<!-- ============================================================
+     HEADER — logo background, site title, tagline
+     ============================================================ -->
 <div class="header">
-    <img src="logo_embossed_clean.png" class="header-logo-bg" alt="">
-    <h1>PREMIUM VOODOO</h1>
-    <div class="tagline">Sound of Soul — Honey & Butter</div>
+    <img src="logo_embossed_clean.png" class="header-logo-bg" alt=""> <!-- Faint embossed logo behind the title -->
+    <h1>PREMIUM VOODOO</h1> <!-- Main site title -->
+    <div class="tagline">Sound of Soul — Honey & Butter</div> <!-- Subtitle / slogan -->
 </div>
 
-<!-- PRODUCTS -->
+<!-- ============================================================
+     PRODUCTS — three clickable product cards
+     ============================================================ -->
 <div class="section-products">
-    <div class="products">
+    <div class="products"> <!-- Flex row containing all three cards -->
 
-        <a href="sample-packs.html" class="product">
-            <img src="sample-packs.png?v=2">
-            <div class="product-title">Percussion Sample Pack</div>
+        <a href="sample-packs.html" class="product"> <!-- Card 1: links to sample packs page -->
+            <img src="sample-packs.png?v=2"> <!-- Product cover image (?v=2 forces browser to reload fresh) -->
+            <div class="product-title">Percussion Sample Pack</div> <!-- Label below image -->
         </a>
 
-        <a href="unseen.html" class="product">
-            <video autoplay loop muted playsinline>
-                <source src="unseen.mp4">
+        <a href="unseen.html" class="product"> <!-- Card 2: links to Unseen EP page -->
+            <video autoplay loop muted playsinline> <!-- Autoplaying looping video, muted so it works without user interaction -->
+                <source src="unseen.mp4"> <!-- The video file to play -->
             </video>
-            <div class="product-title">Unseen EP</div>
+            <div class="product-title">Unseen EP</div> <!-- Label below video -->
         </a>
 
-        <a href="instruments.html" class="product">
-            <img src="instruments.png">
-            <div class="product-title">Instruments</div>
+        <a href="instruments.html" class="product"> <!-- Card 3: links to instruments page -->
+            <img src="instruments.png"> <!-- Product cover image -->
+            <div class="product-title">Instruments</div> <!-- Label below image -->
         </a>
 
     </div>
 </div>
 
-<!-- WAVE: products → video -->
+<!-- Wave shape transitioning from product section green to video section green -->
 <div class="wave">
     <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
         <path d="M0,0 C240,80 480,0 720,40 C960,80 1200,10 1440,50 L1440,80 L0,80 Z" fill="#4a5425"/>
+        <!-- The path draws an organic curve — fill color matches the video section background -->
     </svg>
 </div>
 
-<!-- VIDEO -->
+<!-- ============================================================
+     VIDEO — Live Performance label and YouTube embed
+     ============================================================ -->
 <div class="section-video">
     <div class="video-inner">
-        <div class="video-label">
-            <div class="video-label-line"></div>
-            Live Performance
-            <div class="video-label-line"></div>
+        <div class="video-label"> <!-- Row with lines flanking the label text -->
+            <div class="video-label-line"></div> <!-- Decorative line on the left -->
+            Live Performance <!-- The label text -->
+            <div class="video-label-line"></div> <!-- Decorative line on the right -->
         </div>
-        <iframe src="https://www.youtube.com/embed/lBQsOqGnS84"
-                frameborder="0"
-                allowfullscreen>
+        <iframe src="https://www.youtube.com/embed/lBQsOqGnS84" <!-- YouTube embed URL -->
+                frameborder="0" <!-- Removes the default border around the iframe -->
+                allowfullscreen> <!-- Enables the fullscreen button on the video -->
         </iframe>
     </div>
 </div>
 
-<!-- WAVE: video → about -->
-<div class="wave" style="background:#4a5425;">
+<!-- Wave shape transitioning from video section green to about section dark green -->
+<div class="wave" style="background:#4a5425;"> <!-- Background matches the section above the wave -->
     <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
         <path d="M0,50 C360,0 720,80 1080,30 C1260,10 1380,60 1440,40 L1440,80 L0,80 Z" fill="#3d4620"/>
+        <!-- Fill color matches the about section background below -->
     </svg>
 </div>
 
-<!-- ABOUT -->
+<!-- ============================================================
+     ABOUT — portrait photo and artist description
+     ============================================================ -->
 <div class="section-about">
-    <div class="about-inner">
-        <div class="about-container">
+    <div class="about-inner"> <!-- Centers the content -->
+        <div class="about-container"> <!-- Flex row: photo left, text right -->
 
             <div class="about-image">
-                <img src="MainPortretPicture.jpg" alt="Artist portrait">
+                <img src="MainPortretPicture.jpg" alt="Artist portrait"> <!-- Your portrait photo -->
             </div>
 
             <div class="about-text">
-                <h2>ABOUT</h2>
+                <h2>ABOUT</h2> <!-- Section heading -->
                 <p>
                     Premium Voodoo is a personal musical world rooted in the ancient and the electric.
                     Drawing from shamanic ceremony, the resonance of wood and voice, and the textures
@@ -333,10 +369,12 @@ footer {
     </div>
 </div>
 
-<!-- FOOTER -->
+<!-- ============================================================
+     FOOTER — copyright line at the bottom
+     ============================================================ -->
 <footer>
-    © Premium Voodoo — All rights reserved
+    © Premium Voodoo — All rights reserved <!-- Copyright notice -->
 </footer>
 
-</body>
-</html>
+</body> <!-- End of visible page content -->
+</html> <!-- End of document -->
