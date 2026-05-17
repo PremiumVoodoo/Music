@@ -69,17 +69,19 @@ body {
 
 .header {
     text-align: center; /* Centers everything inside horizontally */
-    padding: 80px 40px 80px; /* Space inside: 80px top, 40px left/right, 80px bottom */
+    padding: 40px 20px 60px; /* Space inside: 40px top, 20px left/right, 60px bottom */
     position: relative; /* Allows child elements to be positioned absolutely inside it */
+    overflow: visible; /* Ensures title is never clipped */
 }
 
 
 
 .header h1 {
-    font-size: clamp(32px, 6vw, 72px); /* Scales with screen width — min 32px, max 72px */
+    font-size: clamp(28px, 4.5vw, 64px); /* Scales with screen width — min 28px, max 64px */
     margin: 0; /* Removes default top/bottom space around the h1 */
     position: relative; /* Puts the title above the absolutely-positioned logo background */
-    white-space: nowrap; /* Prevents the title from breaking onto two lines on desktop */
+    white-space: nowrap; /* Prevents the title from wrapping */
+    overflow: visible; /* Ensures title is never clipped */
 }
 
 .tagline {
