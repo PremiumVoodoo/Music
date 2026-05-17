@@ -184,7 +184,7 @@ body {
     width: 320px; /* Width of the portrait photo frame */
     height: 320px; /* Height of the portrait photo frame — square crop */
     object-fit: cover; /* Fills the square frame by cropping the photo, no stretching */
-    object-position: center top; /* Crops from the top — keeps the face visible */
+    object-position: center bottom; /* Crops from the top — keeps the face visible */
     border-radius: 20px; /* Rounds the corners of the photo */
     box-shadow: 0 20px 40px rgba(0,0,0,0.4); /* Shadow under the photo */
 }
@@ -233,9 +233,9 @@ footer {
         padding-bottom: 60px; /* Less bottom padding on mobile */
     }
 
-    /* Reorders products on mobile: Unseen EP first, then Percussion, then Instruments */
+    /* Reorders products on mobile: Latest EP Release first, then Percussion, then Instruments */
     .products a:nth-child(1) { order: 2; } /* Percussion → middle */
-    .products a:nth-child(2) { order: 1; } /* Unseen EP → top */
+    .products a:nth-child(2) { order: 1; } /* Latest EP Release → top */
     .products a:nth-child(3) { order: 3; } /* Instruments → bottom */
 
     .section-video {
@@ -295,11 +295,11 @@ footer {
             <div class="product-title">Percussion Sample Pack</div> <!-- Label below image -->
         </a>
 
-        <a href="unseen.html" class="product"> <!-- Card 2: links to Unseen EP page -->
+        <a href="unseen.html" class="product"> <!-- Card 2: links to Latest EP Release page -->
             <video autoplay loop muted playsinline> <!-- Autoplaying looping video, muted so it works without user interaction -->
                 <source src="unseen.mp4"> <!-- The video file to play -->
             </video>
-            <div class="product-title">Unseen EP</div> <!-- Label below video -->
+            <div class="product-title">Latest EP Release</div> <!-- Label below video -->
         </a>
 
         <a href="instruments.html" class="product"> <!-- Card 3: links to instruments page -->
