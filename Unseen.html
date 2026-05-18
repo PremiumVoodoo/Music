@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Latest EP Release</title>
+<title>Unseen EP</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300&display=swap" rel="stylesheet">
 
@@ -16,80 +16,108 @@ body {
     font-family: 'Fraunces', serif;
 }
 
-/* CONTAINER */
-.container {
-    display: flex;
-    gap: 100px;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 40px;
+.header {
+    padding: 30px;
 }
 
-/* 🔥 VIDEO FIX (NO STRETCHING EVER) */
-.media video {
-    width: 420px;
-    max-width: 100%;
-    height: auto; /* critical */
-    display: block;
-    border-radius: 20px;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
-}
-
-/* TEXT */
-.info {
-    max-width: 420px;
-}
-
-.info h1 {
-    font-size: 42px;
-    margin-bottom: 20px;
-}
-
-.price {
-    margin-bottom: 15px;
-    font-size: 18px;
-}
-
-.info p {
-    margin-bottom: 25px;
-    line-height: 1.6;
-}
-
-/* BUTTON */
-button {
-    background: #C8CA89;
-    color: #5F6A30;
-    padding: 12px 28px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-/* BACK */
-a {
-    display: block;
-    margin-top: 20px;
+.header a {
     color: #FBFFB8;
     text-decoration: none;
 }
 
-/* 📱 MOBILE */
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    gap: 60px;
+    padding: 40px;
+    align-items: center;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.media {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.media video {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.info {
+    flex: 1;
+}
+
+.info h1 {
+    font-size: 40px;
+    margin-bottom: 8px;
+}
+
+.price {
+    margin-bottom: 12px;
+}
+
+.info p {
+    margin-bottom: 20px;
+}
+
+button {
+    background: #C8CA89;
+    color: #5F6A30;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
 
     .container {
         flex-direction: column;
-        text-align: center;
-        gap: 40px;
+        padding: 20px;
+        gap: 24px;
     }
 
+    .media img,
     .media video {
+        max-width: 100%;
+    }
+
+    .info {
         width: 100%;
-        max-width: 320px;
+        max-width: 340px;
+        margin: 0 auto;
+        text-align: center;
+        box-sizing: border-box;
     }
 
     .info h1 {
         font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .price {
+        margin-bottom: 10px;
+    }
+
+    .info p {
+        margin-bottom: 18px;
+    }
+
+    button {
+        width: 100%;
+        box-sizing: border-box;
     }
 }
 </style>
@@ -97,26 +125,36 @@ a {
 
 <body>
 
+<div class="header">
+    <a href="index.html">← Back</a>
+</div>
+
+<div class="wrapper">
 <div class="container">
 
-    <!-- VIDEO -->
     <div class="media">
         <video autoplay loop muted playsinline>
             <source src="unseen.mp4" type="video/mp4">
         </video>
     </div>
 
-    <!-- TEXT -->
     <div class="info">
-        <h1>Latest EP Release</h1>
-        <div class="price">Rp 10</div>
-        <p>Atmospheric cinematic journey.</p>
-
+        <h1>Unseen EP</h1>
+        <div class="price">$ 3</div>
+        <p>There is a specific kind of music that doesn't ask you to listen — it asks you to arrive. Unseen is that kind of record.
+PremiumVoodoo's three-track EP sits at the intersection of progressive world music and electronic production, but those genre labels feel almost too clinical for what's actually happening here. This is music built around a single, sustained invitation: come in, lose your footing a little, find something on the other side.
+All three tracks move at exactly 110 BPM — a tempo that is neither frenetic nor sleepy, but pulse-like. Heartbeat-adjacent. It binds the EP into something that feels less like a playlist and more like a single extended ceremony in three movements.</p>
         <button>Buy Now</button>
-        <a href="index.html">← Back</a>
     </div>
 
 </div>
+</div>
 
+<footer style="text-align:center; padding:40px; opacity:0.5; font-size:13px;">
+    <a href="index.html" style="color:#FBFFB8; text-decoration:none; margin: 0 16px;">Home</a>
+    <a href="unseen.html" style="color:#FBFFB8; text-decoration:none; margin: 0 16px;">Unseen EP</a>
+    <a href="sample-packs.html" style="color:#FBFFB8; text-decoration:none; margin: 0 16px;">Sample Pack</a>
+    <a href="instruments.html" style="color:#FBFFB8; text-decoration:none; margin: 0 16px;">Instruments</a>
+</footer>
 </body>
 </html>
