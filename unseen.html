@@ -18,6 +18,9 @@
 <style>
 body {
     margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     background: #5F6A30;
     color: #FBFFB8;
     font-family: 'Fraunces', serif;
@@ -33,8 +36,11 @@ body {
 }
 
 .wrapper {
+    flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 40px 0;
 }
 
 .container {
@@ -74,6 +80,19 @@ body {
 
 .info p {
     margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    opacity: 0.5;
+    font-size: 13px;
+}
+
+footer a {
+    color: #FBFFB8;
+    text-decoration: none;
+    margin: 0 16px;
 }
 
 button {
@@ -148,14 +167,18 @@ button {
     <div class="info">
         <h1>Unseen EP</h1>
         <div class="price">$ 3</div>
-        <p>There is a specific kind of music that doesn't ask you to listen — it asks you to arrive. Unseen is that kind of record.
-PremiumVoodoo's three-track EP sits at the intersection of progressive world music and electronic production, but those genre labels feel almost too clinical for what's actually happening here. This is music built around a single, sustained invitation: come in, lose your footing a little, find something on the other side.
-All three tracks move at exactly 110 BPM — a tempo that is neither frenetic nor sleepy, but pulse-like. Heartbeat-adjacent. It binds the EP into something that feels less like a playlist and more like a single extended ceremony in three movements.</p>
+        <p>Three-track EP at the intersection of progressive world music and electronic production.</p>
         <button>Buy Now</button>
     </div>
 
 </div>
 </div>
 
+<footer>
+    <a href="index.html">Home</a>
+    <a href="unseen.html">Unseen EP</a>
+    <a href="sample-packs.html">Sample Pack</a>
+    <a href="instruments.html">Instruments</a>
+</footer>
 </body>
 </html>
