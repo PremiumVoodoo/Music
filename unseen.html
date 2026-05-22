@@ -84,15 +84,20 @@ body {
 
 footer {
     text-align: center;
-    padding: 40px;
+    padding: 40px 20px;
     opacity: 0.5;
     font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 16px;
 }
 
 footer a {
     color: #FBFFB8;
     text-decoration: none;
-    margin: 0 16px;
+    white-space: nowrap;
 }
 
 button {
@@ -144,6 +149,12 @@ button {
     button {
         width: 100%;
         box-sizing: border-box;
+    }
+
+    footer {
+        padding: 32px 12px;
+        gap: 10px;
+        font-size: 11px;
     }
 }
 </style>
